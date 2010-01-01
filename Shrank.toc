@@ -1,0 +1,14 @@
+﻿## Interface: 30300
+
+## Title: Shrank
+## Notes: Warn when players cast spells that aren't max rank
+## Author: Tekkub Stoutwrithe
+## Version: Alpha
+## X-Website: http://tekkub.net/
+## X-Email: tekkub-wow@googlegroups.com
+## X-Category: Misc
+
+## LoadManagers: AddonLoader
+## X-LoadOn-Always: delayed
+
+Shrank.lua
