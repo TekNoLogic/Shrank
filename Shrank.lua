@@ -11,7 +11,7 @@ local reported, spells = {}, setmetatable({}, {
 local f = CreateFrame("Frame")
 f:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 f:SetScript("OnEvent", function(self, event, timestamp, combatEvent, sourceGUID, sourceName, sourceFlags, destGUID, destName, destFlags, spellID, spellName)
-	if not spells[spellID] or reported[sourceName..spellID] or band(sourceFlags, COMBATLOG_OBJECT_TYPE_MASK) ~= COMBATLOG_OBJECT_TYPE_PLAYER or combatEvent == "SPELL_AURA_REMOVED" or not combatEvent:match("^SPELL") or UnitLevel(sourceName) ~= 80 then return end
+	if not spellID or not spells[spellID] or reported[sourceName..spellID] or band(sourceFlags, COMBATLOG_OBJECT_TYPE_MASK) ~= COMBATLOG_OBJECT_TYPE_PLAYER or combatEvent == "SPELL_AURA_REMOVED" or not combatEvent:match("^SPELL") or UnitLevel(sourceName) ~= 80 then return end
 	if combatEvent:match("^SPELL_AURA_") then
 		if (UnitName("target")) == destName then destName = "target" end
 		if destName and UnitLevel(destName) < 80 then return end
